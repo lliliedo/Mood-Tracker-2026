@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mood Tracker 2026</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="wrap">
+    <header class="header">
+      <h1>Mood Tracker 2026 <span>✿</span></h1>
+
+      <div class="actions">
+        <button id="clearAll" class="btn danger">Clear All</button>
+        <button id="exportBtn" class="btn">Export</button>
+        <button id="importBtn" class="btn">Import</button>
+        <input id="importFile" type="file" accept="application/json" hidden />
+      </div>
+    </header>
+
+    <main class="layout">
+      <aside class="left">
+        <section class="card">
+          <h2>Feelings</h2>
+          <div id="legend" class="legend"></div>
+
+          <div class="tip">
+            Desktop: click = cycle moods • <span class="kbd">Shift</span>+click = erase • right click = select only
+            <br/>
+            Mobile: tap = cycle moods • long-press = erase
+          </div>
+        </section>
+
+        <section class="card notesCard">
+          <h2>Notes</h2>
+
+          <div class="noteMeta">
+            <div>
+              <div class="label">Selected</div>
+              <div id="selectedLabel" class="value">—</div>
+            </div>
+            <button id="eraseCell" class="btn small danger" disabled>Delete Day</button>
+          </div>
+
+          <textarea id="noteInput" placeholder="Write a short note for the selected day..." disabled></textarea>
+
+          <div class="small">
+            Auto-saved in your browser (localStorage).
+          </div>
+        </section>
+      </aside>
+
+      <section class="right card">
+        <div class="tableWrap">
+          <table id="moodTable" aria-label="Mood tracker table"></table>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">2026 • Simple • Cute • Works on mobile + desktop</footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
